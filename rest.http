@@ -1,0 +1,15 @@
+
+
+    POST http://localhost:5000/predict HTTP/1.1
+    Content-type: application/json
+
+    {
+        "likes_music": false,
+        "studies_at_night": false,
+        "smokes": false,
+        "health_issues": false,
+        "likes_reading": false,
+        "drinks_coffee": false,
+        "exercises_regularly": false,
+        "prefers_group_study": false
+    }
