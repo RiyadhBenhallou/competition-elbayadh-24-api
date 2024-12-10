@@ -2,16 +2,75 @@ import pandas as pd
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import TfidfVectorizer
+import random
 
-# Load dataset
+
+# ce code pour generer la dataset sample, on a utilise la function random pour 'randomization' de les noms et puis ecrier les donnes dans un fichier csv
+
+########################################################################
+
+# arabic_names = ["Ahmad", "Mohammed", "Ali", "Omar", "Youssef", "Hassan", "Ibrahim", "Khaled", "Abdullah", "Saeed",
+#     "Hussein", "Adel", "Kareem", "Tariq", "Jamal", "Rami", "Sami", "Nabil", "Majed", "Waleed",
+#     "Ziad", "Faisal", "Hisham", "Bassam", "Mahmoud", "Mustafa", "Osama", "Reda", "Tamer", "Wael",
+#     "Amjad", "Bilal", "Fahad", "Hani", "Imad", "Kamal", "Maher", "Nasser", "Rashid", "Zaher"]
+
+# def generate_student_data(num_students=100):
+#     names = arabic_names.copy()
+#     random.shuffle(names)
+
+
+#     if num_students > len(names):
+#         extended_names = []
+#         for i in range(num_students):
+#             if i < len(names):
+#                 extended_names.append(names[i])
+#             else:
+#                 base_name = names[i % len(names)]
+#                 extended_names.append(f"{base_name} {i//len(names) + 1}")
+#         names = extended_names
+
+#     data = {
+#         'student_id': range(1000, 1000 + num_students),
+#         'name': names[:num_students],
+#         'likes_music': np.random.choice([True, False], num_students),
+#         'studies_at_night': np.random.choice([True, False], num_students),
+#         'smokes': np.random.choice([True, False], num_students, p=[0.2, 0.8]),
+#         'health_issues': np.random.choice([True, False], num_students, p=[0.1, 0.9]),
+#         'likes_reading': np.random.choice([True, False], num_students),
+#         'drinks_coffee': np.random.choice([True, False], num_students),
+#         'exercises_regularly': np.random.choice([True, False], num_students),
+#         'prefers_group_study': np.random.choice([True, False], num_students)
+#     }
+    
+#     return pd.DataFrame(data)
+
+# ########################################################################
+
+# df = generate_student_data(100)
+
+
+# df.to_csv('students.csv', index=False)
+
+
+# print("Sample of generated data:")
+# print(df.head())
+
+
+# print("\nDataset Statistics:")
+# print(f"Total number of students: {len(df)}")
+# for column in df.columns:
+#     if column not in ['student_id', 'name']:
+#         true_percentage = (df[column].sum() / len(df)) * 100
+#         print(f"{column}: {true_percentage:.1f}% True")
+
+########################################################################## 
+
 df = pd.read_csv('students.csv')
 
-# Preprocess the data to include the new attributes
 def preprocess_data(df):
     def create_attribute_string(row):
         weighted_attributes = []
         
-        # Assign weights based on boolean attributes
         weighted_attributes.append('music_high' if row['likes_music'] else 'music_low')
         weighted_attributes.append('study_night_high' if row['studies_at_night'] else 'study_night_low')
         weighted_attributes.append('smokes_high' if row['smokes'] else 'smokes_low')
@@ -26,10 +85,8 @@ def preprocess_data(df):
     df['attributes'] = df.apply(create_attribute_string, axis=1)
     return df
 
-# Preprocess the dataset
 df = preprocess_data(df)
 
-# Create a TF-IDF matrix
 tfidf = TfidfVectorizer(
     token_pattern=r'\b\w+\b',
     ngram_range=(1, 2), 
@@ -38,12 +95,10 @@ tfidf = TfidfVectorizer(
 )
 tfidf_matrix = tfidf.fit_transform(df['attributes'])
 
-# Prediction function
 def predict_matches(user_attributes, top_n=5, min_score=0.1):
     def create_input_attribute_string(attributes):
         weighted_attributes = []
         
-        # Assign weights based on user input
         weighted_attributes.append('music_high' if attributes['likes_music'] else 'music_low')
         weighted_attributes.append('study_night_high' if attributes['studies_at_night'] else 'study_night_low')
         weighted_attributes.append('smokes_high' if attributes['smokes'] else 'smokes_low')
@@ -57,17 +112,13 @@ def predict_matches(user_attributes, top_n=5, min_score=0.1):
     
     input_attribute_string = create_input_attribute_string(user_attributes)
     
-    # Transform input to TF-IDF vector
     input_vector = tfidf.transform([input_attribute_string])
     
-    # Calculate cosine similarity
     similarity_scores = cosine_similarity(input_vector, tfidf_matrix)[0]
     
-    # Apply noise and clip scores for variability
     similarity_scores = similarity_scores * 0.9 + np.random.normal(0, 0.05, len(similarity_scores))
     similarity_scores = np.clip(similarity_scores, 0, 1)
     
-    # Prepare results
     results = list(zip(df['name'], similarity_scores, df['student_id']))
     results.sort(key=lambda x: x[1], reverse=True)
     filtered_results = [
@@ -77,7 +128,6 @@ def predict_matches(user_attributes, top_n=5, min_score=0.1):
 
     return filtered_results
 
-# Example input
 user_attributes = {
     'likes_music': True,
     'studies_at_night': True,
@@ -89,7 +139,6 @@ user_attributes = {
     'prefers_group_study': False
 }
 
-# Run predictions
 for _ in range(3):
     matches = predict_matches(user_attributes)
     print("Matches:")

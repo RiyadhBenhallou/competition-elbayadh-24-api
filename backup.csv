@@ -1,0 +1,101 @@
+student_id,name,likes_music,studies_at_night,smokes,health_issues,likes_reading,drinks_coffee,exercises_regularly,prefers_group_study
+1000,Maher,False,False,False,False,True,False,False,True
+1001,Majed,True,True,False,False,True,False,False,False
+1002,Bassam,True,True,False,False,True,False,True,False
+1003,Ali,False,True,True,False,False,True,True,True
+1004,Hussein,True,False,False,False,True,False,True,True
+1005,Imad,True,False,False,False,True,True,False,True
+1006,Ibrahim,True,True,False,False,False,False,False,False
+1007,Hassan,False,True,False,True,False,True,False,True
+1008,Ahmad,True,False,False,False,True,False,False,False
+1009,Ziad,True,False,False,False,False,True,True,False
+1010,Mahmoud,True,True,False,False,True,True,False,True
+1011,Mustafa,False,True,False,False,False,True,False,True
+1012,Faisal,True,True,False,False,False,True,False,True
+1013,Zaher,True,True,False,False,False,True,True,False
+1014,Nabil,False,True,False,True,False,True,True,True
+1015,Hisham,False,True,False,False,True,False,True,False
+1016,Osama,True,True,False,False,False,False,False,False
+1017,Saeed,False,True,False,False,True,False,True,False
+1018,Amjad,True,True,False,False,False,True,False,False
+1019,Sami,False,False,False,False,True,False,True,True
+1020,Khaled,True,True,False,False,True,True,True,True
+1021,Bilal,True,True,False,False,False,False,True,True
+1022,Reda,True,True,False,False,True,False,True,True
+1023,Fahad,True,True,False,True,False,False,False,True
+1024,Omar,True,True,True,False,True,False,True,True
+1025,Nasser,False,False,False,False,False,False,False,True
+1026,Hani,False,True,False,False,False,False,False,False
+1027,Waleed,False,False,False,False,False,False,True,True
+1028,Wael,False,False,False,False,True,False,False,False
+1029,Mohammed,True,False,False,False,True,True,False,False
+1030,Rashid,False,False,False,False,False,True,False,True
+1031,Adel,True,True,False,False,False,False,False,True
+1032,Jamal,True,False,True,False,False,False,True,True
+1033,Kareem,True,True,False,False,True,False,False,False
+1034,Youssef,True,False,False,False,False,True,False,False
+1035,Abdullah,False,True,False,False,True,True,False,False
+1036,Rami,True,True,False,False,False,False,True,True
+1037,Tamer,True,True,False,False,False,True,False,True
+1038,Tariq,True,False,False,False,False,False,False,True
+1039,Kamal,False,False,False,False,True,True,False,False
+1040,Maher 2,False,False,True,False,False,False,False,False
+1041,Majed 2,True,True,False,False,False,True,True,False
+1042,Bassam 2,True,False,False,False,True,True,True,False
+1043,Ali 2,True,False,False,True,False,False,False,False
+1044,Hussein 2,True,False,False,False,False,False,False,False
+1045,Imad 2,False,True,True,False,True,True,True,True
+1046,Ibrahim 2,False,False,False,False,True,True,True,False
+1047,Hassan 2,True,False,False,False,False,False,True,False
+1048,Ahmad 2,True,False,False,False,False,False,True,True
+1049,Ziad 2,True,True,False,False,True,True,False,True
+1050,Mahmoud 2,False,True,False,True,False,False,True,False
+1051,Mustafa 2,False,False,False,True,True,True,True,True
+1052,Faisal 2,True,True,True,False,True,False,True,True
+1053,Zaher 2,False,True,False,False,True,True,False,False
+1054,Nabil 2,False,True,False,False,True,True,True,True
+1055,Hisham 2,False,False,False,False,True,True,True,False
+1056,Osama 2,True,False,False,False,False,False,False,True
+1057,Saeed 2,False,False,False,False,False,True,True,False
+1058,Amjad 2,False,True,False,False,False,True,False,False
+1059,Sami 2,True,True,False,False,True,True,False,True
+1060,Khaled 2,True,True,True,False,True,True,True,True
+1061,Bilal 2,True,True,False,False,True,False,True,False
+1062,Reda 2,True,False,False,False,True,False,False,False
+1063,Fahad 2,False,True,False,False,True,False,False,True
+1064,Omar 2,False,False,True,False,False,True,False,True
+1065,Nasser 2,True,False,False,False,True,False,True,True
+1066,Hani 2,False,True,False,False,True,True,False,False
+1067,Waleed 2,False,False,False,False,True,True,False,False
+1068,Wael 2,True,True,True,True,False,True,False,True
+1069,Mohammed 2,True,False,False,False,True,True,True,False
+1070,Rashid 2,False,False,True,True,False,True,False,False
+1071,Adel 2,False,True,False,False,True,True,True,True
+1072,Jamal 2,False,True,False,False,False,True,False,True
+1073,Kareem 2,True,False,False,False,True,False,False,False
+1074,Youssef 2,True,True,False,False,True,True,True,True
+1075,Abdullah 2,True,False,False,False,False,False,True,True
+1076,Rami 2,True,False,False,False,True,True,True,False
+1077,Tamer 2,True,True,True,False,False,False,True,False
+1078,Tariq 2,True,True,False,True,True,False,True,True
+1079,Kamal 2,False,False,False,False,False,True,True,False
+1080,Maher 3,True,False,False,True,True,False,False,True
+1081,Majed 3,True,False,False,False,False,True,True,False
+1082,Bassam 3,False,True,False,False,False,False,True,False
+1083,Ali 3,False,False,False,False,True,True,False,True
+1084,Hussein 3,False,False,False,False,False,True,True,True
+1085,Imad 3,False,False,False,False,True,True,False,True
+1086,Ibrahim 3,True,True,False,False,True,False,False,True
+1087,Hassan 3,False,True,False,False,True,False,False,False
+1088,Ahmad 3,True,False,True,False,False,False,True,True
+1089,Ziad 3,True,True,False,False,False,False,False,True
+1090,Mahmoud 3,True,True,False,False,False,True,True,False
+1091,Mustafa 3,True,False,False,False,True,False,True,False
+1092,Faisal 3,True,False,False,False,True,False,True,False
+1093,Zaher 3,True,True,False,False,False,True,False,True
+1094,Nabil 3,True,False,False,True,True,True,True,True
+1095,Hisham 3,True,True,False,False,False,False,False,False
+1096,Osama 3,True,True,False,False,False,True,True,False
+1097,Saeed 3,True,False,False,False,False,True,False,False
+1098,Amjad 3,True,True,True,False,False,True,True,True
+1099,Sami 3,False,True,False,False,True,False,True,False
